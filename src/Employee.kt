@@ -2,7 +2,7 @@ interface Evaluable{
     fun evaluatePerformance()
 }
 
-abstract class Employee {
+abstract class Employee : Evaluable{
     abstract val name: String
     abstract val salary: Double
 
@@ -11,7 +11,7 @@ abstract class Employee {
 
     fun details() {
         println("Name of the employee: $name")
-        println("Salary of the employee: $salary")
+        print("Salary of the employee: $salary")
     }
 
 }
@@ -38,6 +38,10 @@ class Manager(override val name: String, override val salary: Double) : Employee
     override fun calculateAnnualBonus() {
         println("The annual bonus is: ${salary * 0.2}, the total is ${salary + (salary * 0.2)}")
     }
+
+    override fun evaluatePerformance() {
+        TODO("No se implementará de momento")
+    }
 }
 
 class Designer(override val name: String, override val salary: Double) : Employee() {
@@ -47,5 +51,9 @@ class Designer(override val name: String, override val salary: Double) : Employe
 
     override fun calculateAnnualBonus() {
         println("The annual bonus is: ${salary * 0.15}, the total is ${salary + (salary * 0.15)}")
+    }
+
+    override fun evaluatePerformance() {
+        TODO("No se implementará por el momento")
     }
 }
