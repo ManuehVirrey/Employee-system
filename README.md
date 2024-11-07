@@ -1,0 +1,3 @@
+This little program recreates a management system for employees with 1 class called Employees and 3 subclasses, Developer,Manager and Designer, Employees implementsw an interface called Evaluable.
+That interface only has one method: evaluatePerformance, which will be overwrited by subclasses, then, in main class, I created an Array of Employees, the Array contains 1 of each excepts the Developer who has 2.
+Finaly, I made a for to show all information of the employees, inside the or, there's an if which will check if the employee is a Developer, in true case, it will print the method evaluatePerformance.
