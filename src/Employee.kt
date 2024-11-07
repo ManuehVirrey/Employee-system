@@ -1,3 +1,7 @@
+interface Evaluable{
+    fun evaluatePerformance()
+}
+
 abstract class Employee {
     abstract val name: String
     abstract val salary: Double
@@ -9,15 +13,20 @@ abstract class Employee {
         println("Name of the employee: $name")
         println("Salary of the employee: $salary")
     }
+
 }
 
-class Developer(override val name: String, override val salary: Double) : Employee() {
+class Developer(override val name: String, override val salary: Double) : Employee(), Evaluable {
     override fun work() {
         println("Writing and reviewing code.")
     }
 
     override fun calculateAnnualBonus() {
         println("The annual bonus is: ${salary * 0.1}, the total is ${salary + (salary * 0.1)}")
+    }
+
+    override fun evaluatePerformance() {
+        println("The employee $name is developer and is performing well.")
     }
 }
 
